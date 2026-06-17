@@ -55,12 +55,12 @@ class ChatNotifier extends StateNotifier<ChatState> {
   }
 
   void clearContext() {
-    state = const ChatState(messages: [
+    state = ChatState(messages: [
       ChatMessageEntity(
         id: 'welcome',
         role: MessageRole.assistant,
         content: 'Hello! I\'m Lexora AI 🤖\n\nI\'m your personal English language coach. Ask me about any word, grammar rule, or language question!',
-        timestamp: null,
+        timestamp: DateTime.now(),
       ),
     ]);
   }

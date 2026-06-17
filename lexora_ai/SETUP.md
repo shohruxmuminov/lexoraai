@@ -9,48 +9,51 @@
 
 ## Installation
 
-### 1. Install Flutter dependencies
+### 1. Generate platform folders + install dependencies
+The repo ships only `lib/` and `pubspec.yaml`. Generate the Android/iOS/Web
+projects (MainActivity, Gradle, web/index.html, etc.) with `flutter create`,
+then fetch packages:
 ```bash
 cd lexora_ai
+flutter create . --org com.lexora --platforms=android,ios,web
 flutter pub get
-flutter pub run build_runner build --delete-conflicting-outputs
+flutter run                # runs on a connected device / Chrome
 ```
+No code generation step is needed — the app uses hand-written providers.
 
-### 2. Firebase Setup
-1. Create a Firebase project at console.firebase.google.com
-2. Add Android app with package: `com.lexora.lexora_ai`
-3. Add iOS app with bundle ID: `com.lexora.lexoraAi`
-4. Download `google-services.json` → place in `android/app/`
-5. Download `GoogleService-Info.plist` → place in `ios/Runner/`
-6. Enable: Authentication, Firestore, Storage, Analytics, Messaging
+> **AI key (optional):** the app runs out of the box in *demo mode*. To enable
+> real GPT-4o answers, run with your key:
+> ```bash
+> flutter run --dart-define=OPENAI_API_KEY=sk-your-key
+> ```
+> or set it from the in-app **Settings → AI & API** screen.
 
-### 3. Supabase Setup
-1. Create project at app.supabase.com
-2. Copy your Project URL and anon key
-3. Add to `lib/core/constants/app_constants.dart`
+### 2. OpenAI API (optional but recommended)
+1. Get an API key from platform.openai.com
+2. Provide it via `--dart-define=OPENAI_API_KEY=sk-...` or the in-app Settings screen.
+3. Without a key the AI features run in **demo mode** (canned replies) so the
+   whole UI is still usable.
 
-### 4. OpenAI API
-1. Get API key from platform.openai.com
-2. Add in Settings screen or environment variable
-3. Or hardcode in `AiService.initialize()` during development
-
-### 5. Run
+### 3. Build for release
 ```bash
-# Android
-flutter run -d android
-
-# iOS
-flutter run -d ios
-
-# Web
-flutter run -d chrome
-
-# Release APK
+# Android APK
 flutter build apk --release
 
-# Release AAB (Play Store)
+# Android App Bundle (Play Store)
 flutter build appbundle --release
+
+# iOS (requires macOS + Xcode)
+flutter build ios --release
+
+# Web
+flutter build web --release
 ```
+
+### Backend (Firebase / Supabase) — not yet wired
+Authentication currently uses a local mock (`UserNotifier`) so the app runs with
+zero backend setup. To connect a real backend, add `firebase_core`/`firebase_auth`
+(or `supabase_flutter`) to `pubspec.yaml`, run `flutterfire configure`, and
+replace the mock calls in `lib/presentation/providers/user_provider.dart`.
 
 ## Architecture
 

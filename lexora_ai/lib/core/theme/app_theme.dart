@@ -14,7 +14,6 @@ class AppTheme {
         secondary: AppColors.secondary,
         tertiary: AppColors.accent,
         surface: AppColors.surfaceLight,
-        background: AppColors.backgroundLight,
         error: AppColors.error,
       ),
       textTheme: GoogleFonts.nunitoTextTheme().copyWith(
@@ -58,12 +57,6 @@ class AppTheme {
           fontSize: 18, fontWeight: FontWeight.w700, color: AppColors.textDark,
         ),
         iconTheme: const IconThemeData(color: AppColors.textDark),
-      ),
-      cardTheme: CardTheme(
-        color: AppColors.cardLight,
-        elevation: 0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        shadowColor: AppColors.primary.withOpacity(0.08),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
@@ -133,7 +126,6 @@ class AppTheme {
         secondary: AppColors.secondaryLight,
         tertiary: AppColors.accent,
         surface: AppColors.surfaceDark,
-        background: AppColors.backgroundDark,
         error: AppColors.error,
       ),
       textTheme: GoogleFonts.nunitoTextTheme(ThemeData.dark().textTheme).copyWith(
@@ -165,11 +157,6 @@ class AppTheme {
           fontSize: 18, fontWeight: FontWeight.w700, color: Colors.white,
         ),
         iconTheme: const IconThemeData(color: Colors.white),
-      ),
-      cardTheme: CardTheme(
-        color: AppColors.cardDark,
-        elevation: 0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
       inputDecorationTheme: InputDecorationTheme(
         filled: true,
