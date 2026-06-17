@@ -1,0 +1,120 @@
+name: lexora_ai
+description: Lexora AI – Ultimate AI Dictionary & Language Learning Platform
+version: 1.0.0+1
+publish_to: "none"
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.4.9
+  riverpod_annotation: ^2.3.3
+
+  # Navigation
+  go_router: ^13.1.0
+
+  # Firebase
+  firebase_core: ^2.24.2
+  firebase_auth: ^4.16.0
+  firebase_firestore: cloud_firestore
+  cloud_firestore: ^4.14.0
+  firebase_storage: ^11.6.0
+  firebase_analytics: ^10.8.0
+
+  # Supabase
+  supabase_flutter: ^2.3.4
+
+  # HTTP & Network
+  dio: ^5.4.0
+  connectivity_plus: ^5.0.2
+
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  sqflite: ^2.3.2
+  path_provider: ^2.1.2
+  shared_preferences: ^2.2.2
+
+  # AI & OpenAI
+  dart_openai: ^4.1.0
+
+  # Speech & Audio
+  speech_to_text: ^6.6.0
+  flutter_tts: ^3.8.5
+  audioplayers: ^5.2.1
+  record: ^5.0.4
+
+  # Camera & OCR
+  camera: ^0.10.5+9
+  google_mlkit_text_recognition: ^0.12.0
+  image_picker: ^1.0.7
+
+  # UI & Animations
+  flutter_animate: ^4.5.0
+  lottie: ^3.0.0
+  shimmer: ^3.0.0
+  cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.9
+  glassmorphism: ^3.0.0
+  fl_chart: ^0.67.0
+  percent_indicator: ^4.2.3
+  confetti: ^0.7.0
+
+  # Fonts & Icons
+  google_fonts: ^6.1.0
+  font_awesome_flutter: ^10.7.0
+
+  # Utilities
+  uuid: ^4.3.3
+  intl: ^0.19.0
+  url_launcher: ^6.2.4
+  share_plus: ^7.2.2
+  permission_handler: ^11.3.0
+  vibration: ^1.8.4
+  package_info_plus: ^5.0.1
+  device_info_plus: ^9.1.2
+
+  # Push Notifications
+  firebase_messaging: ^14.7.19
+  flutter_local_notifications: ^16.3.2
+
+  # Image
+  flutter_image_compress: ^2.1.0
+
+  # Keyboard
+  flutter_keyboard_visibility: ^5.4.1
+
+  # JSON
+  json_annotation: ^4.8.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.1
+  build_runner: ^2.4.8
+  riverpod_generator: ^2.3.9
+  hive_generator: ^2.0.1
+  json_serializable: ^6.7.1
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/animations/
+    - assets/audio/
+
+  fonts:
+    - family: Nunito
+      fonts:
+        - asset: assets/fonts/Nunito-Regular.ttf
+        - asset: assets/fonts/Nunito-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/Nunito-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Nunito-ExtraBold.ttf
+          weight: 800
